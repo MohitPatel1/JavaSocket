@@ -20,3 +20,5 @@ public class Client {
 
 // client is sending one message and getting terminated
 // create new socket for each iteration and closed is.
+
+// Q1) why can i send only one message per socket connection? 
