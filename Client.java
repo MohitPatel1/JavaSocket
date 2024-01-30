@@ -19,3 +19,4 @@ public class Client {
 }
 
 // client is sending one message and getting terminated
+// create new socket for each iteration and closed is.
