@@ -8,14 +8,14 @@ public class ClientServerCommunication {
         while (true) {                    
         Socket s1 = new Socket("mohit", 1234);
         BufferedReader user_input = new BufferedReader((new InputStreamReader(System.in))); // system.in gets console inputs
-        // BufferedReader server_input = new BufferedReader((new InputStreamReader(s1.getInputStream())));
+        BufferedReader server_input = new BufferedReader((new InputStreamReader(s1.getInputStream())));
         DataOutputStream server_out = new DataOutputStream(new DataOutputStream(s1.getOutputStream()));
         
         String userString,serverString;
-        // serverString = server_input.readLine();
-        // System.out.println(serverString);
         userString = user_input.readLine();
         server_out.writeBytes(userString + "\n");
+        serverString = server_input.readLine();
+        System.out.println(serverString);
         s1.close();
         }
     }catch(Exception e){
@@ -23,3 +23,5 @@ public class ClientServerCommunication {
     }
     }
 }
+
+// need to intoroduce multi thread for live communication
